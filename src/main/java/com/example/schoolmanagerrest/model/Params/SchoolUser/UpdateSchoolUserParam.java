@@ -1,4 +1,4 @@
-package com.example.schoolmanagerrest.model.Params.user;
+package com.example.schoolmanagerrest.model.Params.SchoolUser;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,12 +11,10 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateUserParam {
+public class UpdateSchoolUserParam {
+
     private String firstName;
     private String lastName;
-    private String email;
-    private Date createdAt;
-    private String createdBy;
-    private Date updatedAt;
-    private String updatedBy;
+    private String mobileNumber;
+
 }

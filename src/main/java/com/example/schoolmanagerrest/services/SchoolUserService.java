@@ -1,9 +1,7 @@
 package com.example.schoolmanagerrest.services;
 
 import com.example.schoolmanagerrest.model.entity.SchoolUser;
-import com.example.schoolmanagerrest.model.entity.User;
 import com.example.schoolmanagerrest.repositories.SchoolUserRepository;
-import com.example.schoolmanagerrest.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

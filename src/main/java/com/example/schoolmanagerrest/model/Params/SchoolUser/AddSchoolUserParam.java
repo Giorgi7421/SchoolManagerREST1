@@ -1,4 +1,4 @@
-package com.example.schoolmanagerrest.model.Params.user;
+package com.example.schoolmanagerrest.model.Params.SchoolUser;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,8 +13,8 @@ import java.util.Date;
 @NoArgsConstructor
 public class AddSchoolUserParam {
 
-    private String name;
-    private String description;
-    private Date startDate;
-    private Date endDate;
+    private String firstName;
+    private String lastName;
+    private String mobileNumber;
+
 }
