@@ -18,8 +18,8 @@ public class Connection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id")
-    private int id;
-    private int userId;
-    private int courseId;
+    private long id;
+    private long userId;
+    private long courseId;
     private boolean isDeleted;
 }

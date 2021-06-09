@@ -19,7 +19,7 @@ public class CourseService {
     private CourseRepository courseRepository;
 
     public List<Course> getAllCourses() {
-        return courseRepository.findAll();
+        return courseRepository.findAllMarked();
     }
 
     public Course getCourseByID(long id) throws Exception {
@@ -39,8 +39,18 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public void deleteCourse(Course course){
-        courseRepository.delete(course);
+    public void deleteCourse(int id){
+        courseRepository.markDeleted(id);
+        courseRepository.markDeletedConnections(id);
+    }
+
+    public List<SchoolUser> getAllUsers(long courseId) throws Exception {
+        Optional<Course> optionalCourse = courseRepository.findByIdMarked(courseId);
+        if (optionalCourse.isPresent()){
+            return courseRepository.findUsersOfTheCourse(optionalCourse.get().getId());
+        }else{
+            throw new Exception("Course not found");
+        }
     }
 
 }

@@ -19,7 +19,7 @@ public class ConnectionService {
     private ConnectionRepository connectionRepository;
 
     public List<Connection> getAllConnections() {
-        return connectionRepository.findAll();
+        return connectionRepository.findAllMarked();
     }
 
     public Connection getConnectionByID(long id) throws Exception {
@@ -39,7 +39,7 @@ public class ConnectionService {
         return connectionRepository.save(connection);
     }
 
-    public void deleteConnection(Connection connection){
-        connectionRepository.delete(connection);
+    public void deleteConnection(int id){
+        connectionRepository.markDeleted(id);
     }
 }
